@@ -11,3 +11,12 @@ producto2.Nombre = "Teclado";
 producto2.Precio = 500.00m;
 producto2.Stock = 30;
 producto2.MostrarInformacion();
+
+Pedido pedido1 = new Pedido(1);
+pedido1.AgregarItem(producto1, 45);
+pedido1.AgregarItem(producto2, 10);
+pedido1.MostrarDetalles();
+
+Console.WriteLine("****************************** ACTUALIZACIÓN DE STOCK ******************************");
+producto1.MostrarInformacion();
+producto2.MostrarInformacion();
