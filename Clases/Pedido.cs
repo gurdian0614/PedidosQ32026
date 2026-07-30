@@ -1,7 +1,7 @@
 public class Pedido
 {
     public int Id { get; set; }
-    public DateTime Fecha { get; set; }
+    public DateTime Fecha => DateTime.Now;
     public List<ItemPedido> Items { get; set; }
     public decimal Total => Items.Sum(item => item.SubTotal);
 
@@ -36,7 +36,7 @@ public class Pedido
 
         foreach (ItemPedido item in Items)
         {
-            Console.WriteLine($"Producto {item.Producto.Nombre}, Cantidad: {item.Cantidad}, SubTotal: {item.SubTotal:C}");
+            Console.WriteLine($"Producto: {item.Producto.Nombre}, Cantidad: {item.Cantidad}, SubTotal: {item.SubTotal:C}");
         }
 
         Console.WriteLine($"Total: {Total:C}");
