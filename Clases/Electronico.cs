@@ -1,4 +1,4 @@
-public class Electronico : Producto
+public class Electronico : Producto, IDescribible
 {
     public int GarantiaMeses { get; set; }
     public string? Voltaje { get; set; }
@@ -10,8 +10,12 @@ public class Electronico : Producto
         Console.WriteLine($"Nombre: {Nombre}");
         Console.WriteLine($"Precio: {Precio}");
         Console.WriteLine($"Cantidad Disponible: {Stock}");
-        Console.WriteLine($"Garantía: {GarantiaMeses} meses");
-        Console.WriteLine($"Voltaje: {Voltaje}");
+        Console.WriteLine(ObtenerDescripcionCompleta());
         Console.WriteLine();
+    }
+
+    public string ObtenerDescripcionCompleta()
+    {
+        return $"Garantía: {GarantiaMeses}\nVoltaje: {Voltaje}";
     }
 }

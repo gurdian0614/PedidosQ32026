@@ -1,4 +1,4 @@
-public class Libro : Producto
+public class Libro : Producto, IDescribible
 {
     public string? ISBN { get; set; }
     public string? Autor { get; set; }
@@ -11,9 +11,12 @@ public class Libro : Producto
         Console.WriteLine($"Nombre: {Nombre}");
         Console.WriteLine($"Precio: {Precio}");
         Console.WriteLine($"Cantidad Disponible: {Stock}");
-        Console.WriteLine($"ISBN: {ISBN}");
-        Console.WriteLine($"Autor: {Autor}");
-        Console.WriteLine($"Número de Páginas: {NumeroPaginas}");
+        Console.WriteLine(ObtenerDescripcionCompleta());
         Console.WriteLine();
+    }
+
+    public string ObtenerDescripcionCompleta()
+    {
+        return $"ISBN: {ISBN}\nAutor: {Autor}\nNúmero de Páginas: {NumeroPaginas}";
     }
 }
