@@ -30,23 +30,34 @@ electronico.GarantiaMeses = 24;
 electronico.Voltaje = "110V";
 electronico.MostrarInformacion();
 
-Libro libro = new Libro();
-libro.Id = 4;
-libro.Nombre = "Cipotes";
-libro.Precio = 250m;
-libro.Stock = 100;
-libro.ISBN = "24FGTY-5453";
-libro.Autor = "Ramón Amaya Amador";
-libro.NumeroPaginas = 200;
-libro.MostrarInformacion();
+Libro libro1 = new Libro();
+libro1.Id = 4;
+libro1.Nombre = "Cipotes";
+libro1.Precio = 250m;
+libro1.Stock = 100;
+libro1.ISBN = "24FGTY-5453";
+libro1.Autor = "Ramón Amaya Amador";
+libro1.NumeroPaginas = 200;
+libro1.MostrarInformacion();
+
+Libro libro2 = new Libro("RTFJDDJF8478");
+libro2.Id = 5;
+libro2.Nombre = "Popol Vuh";
+libro2.Precio = 150m;
+libro2.Stock = 80;
+libro2.Autor = "Los Mayas";
+libro2.NumeroPaginas = 150;
+libro2.MostrarInformacion();
 
 Pedido pedido2 = new Pedido(1);
 pedido2.AgregarItem(electronico, 12);
-pedido2.AgregarItem(libro, 25);
+pedido2.AgregarItem(libro1, 25);
+pedido2.AgregarItem(libro2, 12);
 pedido2.MostrarDetalles();
 
 Console.WriteLine("****************************** ACTUALIZACIÓN DE STOCK ******************************");
 electronico2.MostrarInformacion();
 electronico3.MostrarInformacion();
 electronico.MostrarInformacion();
-libro.MostrarInformacion();
+libro1.MostrarInformacion();
+libro2.MostrarInformacion();

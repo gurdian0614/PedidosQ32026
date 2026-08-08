@@ -4,6 +4,19 @@ public class Libro : Producto, IDescribible
     public string? Autor { get; set; }
     public int NumeroPaginas { get; set; }
 
+    public Libro() {}
+
+    public Libro(string ISBN)
+    {
+        this.ISBN = ISBN;
+    }
+
+    public Libro(string ISBN, string Autor)
+    {
+        this.ISBN = ISBN;
+        this.Autor = Autor;
+    }
+
     public override void MostrarInformacion()
     {
         Console.WriteLine("******************** DATOS DEL PRODUCTO ********************");
